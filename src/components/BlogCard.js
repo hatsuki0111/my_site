@@ -6,7 +6,7 @@ const BlogCard =(props)=>{
     <>
     <div className='blogCard'></div>
     <div onClick={()=>console.log(props.data)}>clg</div>
-    <img src={props.data.fields.image.fields.file.url}/>
+    <img src={props.data.fields.image.fields.file.url} alt="ブログ画像"/>
     <h3>{props.data.fields.title}</h3>
     <p>{props.data.fields.publishDate}</p>
   <ReactMarkdown className='body'>{props.data.fields.body}</ReactMarkdown>
