@@ -4,8 +4,9 @@ node_js:
 branches:
   only:
     - master
-script:
+install: 
   - npm install
+script:
   - npm run build
 deploy:
   skip_cleanup: true
