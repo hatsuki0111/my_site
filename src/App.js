@@ -2,14 +2,14 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Contact from './pages/Contact';
-import About from './pages/About';
 import Top from './pages/Top';
+import Blogs from './pages/Blogs'
 
 import * as contentful from "contentful";
 import ApiKey from './constants/contentful';
 
 import React ,{useState, useEffect} from 'react';
+import BlogDetail from './pages/BlogDetail';
 
 const App =()=> {
   const client = contentful.createClient(ApiKey)
@@ -32,12 +32,12 @@ const App =()=> {
       render={() => <Top data={blog}/>}>
     </Route>
     <Route exact
-      path="/about"
-      render={() => <About />}>
+      path="/blogs"
+      render={() => <Blogs data={blog}/>}>
     </Route>
     <Route exact
-      path="/contact"
-      render={() => <Contact />}>
+      path="/blogs/:id"
+      render={() => <BlogDetail data={blog}/>}>
     </Route>
   </Switch>
   <Footer />
